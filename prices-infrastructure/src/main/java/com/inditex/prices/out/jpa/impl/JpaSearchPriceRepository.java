@@ -7,10 +7,13 @@ import com.inditex.prices.out.jpa.model.PriceEntity;
 import com.inditex.prices.port.out.SearchPriceRepository;
 import com.inditex.prices.port.out.model.PriceCriteria;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@AllArgsConstructor
+@Repository
+@RequiredArgsConstructor
 public class JpaSearchPriceRepository implements SearchPriceRepository  {
 
     private final SpringDataPriceRepository springDataPriceRepository;

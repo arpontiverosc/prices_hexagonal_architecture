@@ -3,15 +3,23 @@ package com.inditex.prices.out.jpa.model;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity(name="prices")
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@ToString
 public class PriceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
+    @EqualsAndHashCode.Include
     private Long id;
 
     @Column(name="brand_id")
@@ -35,75 +43,5 @@ public class PriceEntity {
 
     private Long priority;
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(Long brandId) {
-        this.brandId = brandId;
-    }
-
-    public LocalDateTime getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
-    }
-
-    public LocalDateTime getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(LocalDateTime endDate) {
-        this.endDate = endDate;
-    }
-
-    public Long getPriceList() {
-        return priceList;
-    }
-
-    public void setPriceList(Long priceList) {
-        this.priceList = priceList;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public String getCurr() {
-        return curr;
-    }
-
-    public void setCurr(String curr) {
-        this.curr = curr;
-    }
-
-    public Long getPriority() {
-        return priority;
-    }
-
-    public void setPriority(Long priority) {
-        this.priority = priority;
-    }
 }

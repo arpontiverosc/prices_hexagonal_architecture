@@ -21,7 +21,6 @@
         <module>prices-domain</module>
         <module>prices-infrastructure</module>
         <module>prices-use-case</module>
-        <module>common</module>
         <module>prices-container</module>
     </modules>
 

@@ -15,11 +15,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class PricesController implements PricesApi {
 
-
     private final SearchPricesUseCase searchPricesUseCase;
 
     @Override
     public PriceDetailResponse findPricesBy(LocalDateTime priceDate, Long productId, Long brandId) {
-        return DetailPriceResponseMapper.from(searchPricesUseCase.execute(DetailPriceQueryMapper.from(priceDate,productId,brandId)));
+        return DetailPriceResponseMapper.from(searchPricesUseCase.execute(DetailPriceQueryMapper.from(priceDate, productId, brandId)));
     }
 }
