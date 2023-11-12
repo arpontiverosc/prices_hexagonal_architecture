@@ -1,5 +1,6 @@
 package com.inditex.prices.service;
 
+import com.inditex.prices.exception.PriceNotFoundException;
 import com.inditex.prices.model.Price;
 import com.inditex.prices.port.out.SearchPriceRepository;
 import com.inditex.prices.port.out.model.PriceCriteria;
@@ -13,6 +14,7 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public Price retrievePrice(PriceCriteria criteria) {
-        return searchPriceRepository.findPrice(criteria);
+        return searchPriceRepository.findPrice(criteria).orElseThrow(()-> new PriceNotFoundException());
+
     }
 }

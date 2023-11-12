@@ -9,15 +9,15 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>prices-domain</artifactId>
+    <artifactId>common</artifactId>
 
     <properties>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.inditex.prices</groupId>
-            <artifactId>common</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 

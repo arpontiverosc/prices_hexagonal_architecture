@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -19,9 +20,8 @@ public class JpaSearchPriceRepository implements SearchPriceRepository  {
     private final SpringDataPriceRepository springDataPriceRepository;
     private final PricesSpecification priceSpecification;
     @Override
-    public Price findPrice(PriceCriteria criteria) {
+    public Optional<Price> findPrice(PriceCriteria criteria) {
         List<PriceEntity> priceEntities = springDataPriceRepository.findAll(priceSpecification.getPrices(criteria));
-        PriceEntity priceEntity = priceEntities.stream().findFirst().get();
-        return PriceMapper.from(priceEntity);
+        return priceEntities.stream().findFirst().map(PriceMapper::from);
     }
 }
