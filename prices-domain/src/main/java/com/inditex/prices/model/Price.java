@@ -12,6 +12,16 @@ public class Price {
     private LocalDateTime endDate;
     private String price;
 
+    private Price(Builder builder) {
+        id = builder.id;
+        productId = builder.productId;
+        brandId = builder.brandId;
+        priceIdList = builder.priceIdList;
+        startDate = builder.startDate;
+        endDate = builder.endDate;
+        price = builder.price;
+    }
+
     public Long getId() {
         return id;
     }
@@ -38,5 +48,62 @@ public class Price {
 
     public String getPrice() {
         return price;
+    }
+
+
+    public static final class Builder {
+        private Long id;
+        private Long productId;
+        private Long brandId;
+        private Long priceIdList;
+        private LocalDateTime startDate;
+        private LocalDateTime endDate;
+        private String price;
+
+        private Builder() {
+        }
+
+        public static Builder builder() {
+            return new Builder();
+        }
+
+        public Builder id(Long val) {
+            id = val;
+            return this;
+        }
+
+        public Builder productId(Long val) {
+            productId = val;
+            return this;
+        }
+
+        public Builder brandId(Long val) {
+            brandId = val;
+            return this;
+        }
+
+        public Builder priceIdList(Long val) {
+            priceIdList = val;
+            return this;
+        }
+
+        public Builder startDate(LocalDateTime val) {
+            startDate = val;
+            return this;
+        }
+
+        public Builder endDate(LocalDateTime val) {
+            endDate = val;
+            return this;
+        }
+
+        public Builder price(String val) {
+            price = val;
+            return this;
+        }
+
+        public Price build() {
+            return new Price(this);
+        }
     }
 }

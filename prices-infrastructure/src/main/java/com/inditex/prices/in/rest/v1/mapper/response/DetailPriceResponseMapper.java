@@ -2,7 +2,10 @@ package com.inditex.prices.in.rest.v1.mapper.response;
 
 import com.inditex.prices.in.rest.v1.model.response.PriceDetailResponse;
 import com.inditex.prices.model.Price;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class DetailPriceResponseMapper {
     public static PriceDetailResponse from(Price price) {
         return PriceDetailResponse.builder()
