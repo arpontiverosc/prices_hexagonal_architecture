@@ -26,7 +26,7 @@ Desde linea de comandos, en ruta del proyecto donde se encuentra el fichero pom.
 mvn spring-boot:run
 
 Postman
-https://github.com/arpontiverosc/QindelTest/blob/main/src/main/resources/Qindel%20Test.postman_collection.json
+https://github.com/arpontiverosc/prices_hexagonal_architecture/tree/main/postman
 
 Swagger
 http://localhost:8080/swagger-ui/index.html
