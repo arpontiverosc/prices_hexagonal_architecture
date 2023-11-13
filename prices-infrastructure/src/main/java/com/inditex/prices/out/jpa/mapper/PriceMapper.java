@@ -12,6 +12,7 @@ public class PriceMapper {
         return Price.Builder.builder()
                 .id(priceEntity.getId())
                 .brandId(priceEntity.getBrandId())
+                .priceIdList(priceEntity.getPriceList())
                 .productId(priceEntity.getProductId())
                 .price(priceEntity.getPrice()+priceEntity.getCurr())
                 .startDate(priceEntity.getStartDate())

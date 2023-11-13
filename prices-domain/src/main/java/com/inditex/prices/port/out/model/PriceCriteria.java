@@ -1,6 +1,7 @@
 package com.inditex.prices.port.out.model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class PriceCriteria {
 
@@ -62,5 +63,18 @@ public class PriceCriteria {
         public PriceCriteria build() {
             return new PriceCriteria(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PriceCriteria that = (PriceCriteria) o;
+        return Objects.equals(getPriceDate(), that.getPriceDate()) && Objects.equals(getProductId(), that.getProductId()) && Objects.equals(getBrandId(), that.getBrandId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPriceDate(), getProductId(), getBrandId());
     }
 }

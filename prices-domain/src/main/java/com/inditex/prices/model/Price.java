@@ -1,6 +1,7 @@
 package com.inditex.prices.model;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 public class Price {
 
@@ -105,5 +106,18 @@ public class Price {
         public Price build() {
             return new Price(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Price price = (Price) o;
+        return Objects.equals(getId(), price.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

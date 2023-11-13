@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
 public class PriceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
+
     @EqualsAndHashCode.Include
     private Long id;
 
@@ -37,10 +37,13 @@ public class PriceEntity {
     @Column(name="product_id")
     private Long productId;
 
+    @Column(name="price")
     private BigDecimal price;
 
+    @Column(name="curr")
     private String curr;
 
+    @Column(name="priority")
     private Long priority;
 
 

@@ -14,7 +14,7 @@ public class PriceServiceImpl implements PriceService {
 
     @Override
     public Price retrievePrice(PriceCriteria criteria) {
-        return searchPriceRepository.findPrice(criteria).orElseThrow(()-> new PriceNotFoundException());
+        return searchPriceRepository.findPrice(criteria).orElseThrow(PriceNotFoundException::new);
 
     }
 }
