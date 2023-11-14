@@ -28,7 +28,4 @@ mvn spring-boot:run
 Postman
 https://github.com/arpontiverosc/prices_hexagonal_architecture/tree/main/postman
 
-Swagger
-http://localhost:8080/swagger-ui/index.html
-
 
