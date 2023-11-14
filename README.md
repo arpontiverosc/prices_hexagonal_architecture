@@ -17,12 +17,12 @@ Incluye tests al endpoint rest que validan las siguientes peticiones al servicio
 
 Para lanzar test. 
 ----------------------------------
-Desde linea de comandos, en la ruta del proyecto donde se encuentra el fichero pom.xml ejecutar:
+Desde linea de comandos, en la ruta del proyecto donde se encuentra el fichero https://github.com/arpontiverosc/prices_hexagonal_architecture/tree/main pom.xml ejecutar:
 mvn test
 
 Lanzar aplicación. 
 ----------------------------------
-Desde linea de comandos, en ruta del proyecto donde se encuentra el fichero pom.xml ejecutar: 
+Desde linea de comandos, en ruta del https://github.com/arpontiverosc/prices_hexagonal_architecture/tree/main/prices-container proyecto donde se encuentra el fichero pom.xml ejecutar: 
 mvn spring-boot:run
 
 Postman
